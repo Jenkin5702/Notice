@@ -39,9 +39,9 @@ public class ToolAboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.fragment_tool_about, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.title);
+        TextView textView = rootView.findViewById(R.id.title);
         textView.setText(mToolType.getToolNameResourceId());
-        textView = (TextView) rootView.findViewById(R.id.description);
+        textView = rootView.findViewById(R.id.description);
         textView.setText(mToolType.getToolDescriptionResourceId());
 
         return rootView;
