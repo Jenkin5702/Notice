@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Woodworking Tools</string>
+    <string name="app_name">Notice</string>
 
     <!-- Tool names -->
     <string name="clamps">Clamps</string>
@@ -31,4 +31,26 @@
     <string name="squares">广场</string>
     <string name="platforms">平台</string>
     <string name="circles">圈子</string>
+
+    <string name="team">组队</string>
+    <string name="help">求助</string>
+    <string name="deal">交易</string>
+
+    <string name="activity">活动</string>
+    <string name="news">新闻</string>
+    <string name="channel">频道</string>
+
+    <array name="notifications">
+        <item>An Avenue</item>
+        <item>Saisho no Sonzai</item>
+        <item>Hinata</item>
+        <item>Brizilian Rhyme</item>
+        <item>Sorrowless</item>
+        <item>Sanctuary</item>
+        <item>Itono Minako</item>
+    </array>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
