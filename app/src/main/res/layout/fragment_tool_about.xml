@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        tools:text="@string/clamps" />
+        tools:text="@string/marx" />
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        tools:text="@string/clamps_description" />
+        tools:text="@string/notification_marx" />
 </LinearLayout>

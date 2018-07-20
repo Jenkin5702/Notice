@@ -1,12 +1,14 @@
 package com.kisetsu.notice;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,10 +17,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.kisetsu.notice.adapters.NavigationPagerAdapter;
-import com.kisetsu.notice.utilities.RoundedBitmapDrawable;
+import com.kisetsu.notice.activities.ActivityCircle;
+import com.kisetsu.notice.activities.ActivityHelpPublish;
+import com.kisetsu.notice.activities.ActivityLogin;
+import com.kisetsu.notice.activities.ActivityTeamPublish;
+import com.kisetsu.notice.drawables.FadedImageDrawable;
+import com.kisetsu.notice.fragments.FragmentCircle;
+import com.kisetsu.notice.fragments.FragmentNotification;
+import com.kisetsu.notice.fragments.FragmentPlatform;
+import com.kisetsu.notice.fragments.FragmentSquare;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = "MainActivity";
@@ -28,14 +36,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private int mCurrentNavPosition;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private ToolType[] mToolTypes = ToolType.values();
+    private BottomNavigationView bottomNavigationView;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mToolbar=findViewById(R.id.toolbar);
 
-        Toolbar mToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
         // Enable opening of drawer
@@ -52,29 +61,59 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mNavigationView = findViewById(R.id.navigation_view);
         mNavigationView.setNavigationItemSelectedListener(this);
 
+        mDrawerLayout.setStatusBarBackgroundColor(getResources().getColor(R.color.pickWheelBarrow_blue));
+
+//        Bitmap bitmap=BitmapFactory.decodeResource(getResources(),R.drawable.header);
+//        FadedImageDrawable fadedImage=new FadedImageDrawable(bitmap);
+//        View headerView=mNavigationView.getHeaderView(0);
+//        ImageView headerImage=headerView.findViewById(R.id.header);
+//        headerImage.setImageDrawable(getResources().getDrawable(R.drawable.header));
+
+        bottomNavigationView =findViewById(R.id.navigation);
         // Set up tabs and title
-        if (savedInstanceState == null) {
-        }
         setBottomNavigation(mCurrentNavPosition);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // 动态设置ToolBar状态
+        menu.findItem(R.id.publish_team).setVisible(true);
+        menu.findItem(R.id.publish_help).setVisible(true);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.publish_team:
+                startActivity(new Intent(MainActivity.this, ActivityTeamPublish.class));
+                break;
+            case R.id.publish_help:
+                startActivity(new Intent(MainActivity.this, ActivityHelpPublish.class));
+                break;
+            case R.id.login_register:
+                startActivity(new Intent(MainActivity.this, ActivityLogin.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.circles:
+            case R.id.home:
                 mCurrentNavPosition = 0;
                 break;
-            case R.id.platforms:
-                mCurrentNavPosition = 1;
-                break;
-            case R.id.squares:
-                mCurrentNavPosition = 2;
-                break;
-            case R.id.notifications:
-                mCurrentNavPosition = 3;
+            case R.id.schedule:
+                startActivity(new Intent(MainActivity.this, ActivityCircle.class));
                 break;
             case R.id.setting:
-                mCurrentNavPosition = 4;
+                mCurrentNavPosition = 2;
                 break;
             default:
                 Log.w(TAG, "Unknown drawer item selected");
@@ -103,53 +142,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void setBottomNavigation(int position){
-        final ViewPager viewPager = findViewById(R.id.viewpager);
-        final BottomNavigationView navigationView=findViewById(R.id.navigation);
-        final NavigationPagerAdapter adapter=
-                new NavigationPagerAdapter(getSupportFragmentManager(),getResources());
-        viewPager.setAdapter(adapter);
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        final FragmentSquare fragmentSquare=FragmentSquare.newInstance();
+        final FragmentPlatform fragmentPlatform=FragmentPlatform.newInstance();
+        final FragmentNotification fragmentNotification=FragmentNotification.newInstance();
+        final FragmentCircle fragmentCircle=FragmentCircle.newInstance();
+        bottomNavigationView.setHorizontalScrollBarEnabled(false);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
-                    case R.id.navigation_circle:
-                        viewPager.setCurrentItem(0);
-                        return true;
+                    case R.id.navigation_circles:
+                        mToolbar.setTitle(R.string.circles);
+                        transaction.replace(R.id.fl_container,fragmentCircle);
+                        break;
+                    case R.id.navigation_square:
+                        mToolbar.setTitle(R.string.squares);
+                        transaction.replace(R.id.fl_container, fragmentSquare);
+                        break;
                     case R.id.navigation_platform:
-                        viewPager.setCurrentItem(1);
-                        return true;
+                        mToolbar.setTitle(R.string.platforms);
+                        transaction.replace(R.id.fl_container, fragmentPlatform);
+                        break;
                     case R.id.navigation_notification:
-                        viewPager.setCurrentItem(2);
-                        return true;
+                        mToolbar.setTitle(R.string.notification);
+                        transaction.replace(R.id.fl_container, fragmentNotification);
+                        break;
                 }
-                return false;
+                transaction.commit();
+                return true;
             }
         });
     }
 
-//    private void setupTabs(int position) {
-//        final ViewPager viewPager = findViewById(R.id.viewpager);
-//        final TabLayout tabLayout = findViewById(R.id.tabs);
-//        final ToolPagerAdapter toolPagerAdapter = new ToolPagerAdapter(getSupportFragmentManager(), getResources(), mToolTypes[position]);
-//        tabLayout.removeAllTabs();
-//        tabLayout.setTabsFromPagerAdapter(toolPagerAdapter);
-//        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-//        viewPager.setAdapter(toolPagerAdapter);
-//        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                viewPager.setCurrentItem(tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
-//    }
 }

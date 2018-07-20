@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -16,14 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ToolDetailActivity"
-            android:label="@string/title_activity_tool_detail"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kisetsu.notice.MainActivity" />
-        </activity>
+        <activity android:name=".activities.ActivityMessage"/>
+        <activity android:name=".activities.ActivityTeamDetail"/>
+        <activity android:name=".activities.ActivityNotificationDetail"/>
+        <activity android:name=".activities.ActivityCircle"/>
+        <activity android:name=".activities.ActivityTeamPublish"/>
+        <activity android:name=".activities.ActivityHelpPublish"/>
+        <activity android:name=".activities.ActivityLogin"/>
     </application>
-
 </manifest>

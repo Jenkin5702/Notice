@@ -1,26 +1,11 @@
 <resources>
-    <string name="app_name">Notice</string>
+    <string name="app_name">易校园</string>
 
-    <!-- Tool names -->
-    <string name="clamps">Clamps</string>
-    <string name="saws">Saws</string>
-    <string name="drills">Drills</string>
-    <string name="sanders">Sanders</string>
-    <string name="routers">Routers</string>
-    <string name="more">More</string>
     <string name="about">About</string>
     <string name="stationary">Stationary</string>
     <string name="handheld">Handheld</string>
     <string name="battery">Battery</string>
 
-    <!-- Tool descriptions -->
-    <string name="clamps_description">Whenever you need to keep two work pieces together, clamps are a great solution. A variety of different types of clamps allow you to apply the correct pressure in the right direction for any project need.</string>
-    <string name="saws_description">An essential part of any woodworker\'s tool chest, saws let you easily and quickly shape wood for whatever you may be working on. Different saw specialize in ripping, crosscutting, or even miter cuts.</string>
-    <string name="drills_description">When you need more staying power than a hammer and nail can provide, drills and screws are your best bet. Drills can also create holes for inserting dowels and other pieces.</string>
-    <string name="sanders_description">Before finishing your woodworking project, you will want to sand it smooth. This lets the wood take on the finish more evenly and also improves both its appearance and its feel.</string>
-    <string name="routers_description">A router is one of those tools that you don\'t think you need until after you\'ve used it; then you wonder how you lived without one! Routers can perform aesthetic functions like shaping decorative trim, but they can also provide functions core to woodworking like ensuring two pieces are perfectly flush.</string>
-    <string name="more_description">There are countless tools because there are countless projects. Whatever you might need to do, you can surely find a tool that matches your exact needs.</string>
-    <string name="title_activity_tool_detail">ToolDetailActivity</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -41,16 +26,207 @@
     <string name="channel">频道</string>
 
     <array name="notifications">
-        <item>An Avenue</item>
-        <item>Saisho no Sonzai</item>
-        <item>Hinata</item>
-        <item>Brizilian Rhyme</item>
-        <item>Sorrowless</item>
-        <item>Sanctuary</item>
-        <item>Itono Minako</item>
+        <item name="marx">思修基础课</item>
+        <item name="exmajor">转专业补修</item>
+        <item name="choose_lesson">选课通知</item>
+        <item name="innovate">创青春</item>
+        <item name="restudy_sign">重修报名</item>
+        <item name="restudy_lesson">重修选课</item>
     </array>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="marx">思修基础课</string>
+    <string name="exmajor">转专业补修</string>
+    <string name="choose_lesson">选课通知</string>
+    <string name="innovate">创青春</string>
+    <string name="restudy_sign">重修报名</string>
+    <string name="restudy_lesson">重修选课</string>
+
+
+    <string name="notification_marx">转发马克思学院通知——
+        《思想道德修养与法律》基础课需要为2016级的全体同学补0.5学分的实践学时，
+        请2016级各班负责同学通过电话与当时此课程的课任老师联系,老师布置实践课的补课方法和要求。
+    </string>
+    <string name="notification_experiment">16 级因转专业需要补修大学物理实验 A 的同学请于3 月 9 日（周五）下午 16:30
+        到北辰校区实验楼 217 室报到，安排补修大学物理实验 A 课程。
+        请相关学院通知本学院 16 级因转专业需补修物理实验 A 的本一和城市学院的学生准时参加，以后不再安排相关事宜。
+    </string>
+    <string name="notification_lessons">《2018年春季学期本科生校管公选课选课通知》已上传群文件，正选阶段定于2018年3月7日9:00至3月12日14:00，
+        补、退选阶段定于2018年3月14日9:00至3月20日14:00。此文件夹内容比较详细，请同学们仔细阅读，按要求进行选课。
+    </string>
+    <string name="notification_innovate">各位参赛成员：创青春全国大学生创业大赛校内报名情况已经上传至群共享，请各位参赛队员进行核对，有问题请及时与工作人员进行联系。
+        另外，因为系统目前不太稳定，此次评审以大家提交到官方邮箱的作品为主，有需要更改项目的请于今天晚上12:00之前重新发送邮箱进行更改，
+        明天将开始进行分组、送审。</string>
+    <string name="notification_network">1 因为全校同学都在报名，所以出现个别网络问题是可以理解的，而且肯定是可以解决的，大家有点耐心。
+        2 重修报名的大原则是我们只可以报名本学期开设的课程，有些同学反应个别课程本学期未开课，建议涉及到这类问题的同学具体咨询负责管理制定教学计划的相关老师，以免造成不必要的后果。
+        3 学校的部分学院公布了一些只能报名自学重修的课程，我将此信息统一整理公布在群中，供大家参考。
+    </string>
+    <string name="notification_restudy">本次重修选课分两个阶段进行，跟班重修阶段定于2017年10月27日9:00至10月31日12:00，自学重修阶段定于2017年11月1日9:00至11月6日14:00。
+        具体事项通知已上传群文件。同时已经发布到本科生院主页，请认真阅读相关通知再进行报名工作。
+    </string>
+    <string name="team_detail">队伍详情</string>
+    <string name="description_team_ai">
+        成员:Bill.Gate, Huge, Kris Wu,JenKin \n
+        方向:Artificial Intelligence \n
+        关键词:DeepLearning, Machine_learning, 神经网络 \n
+        PLAN:\n
+              1.小组讨论\n
+              2.上机实战\n
+              3.参观科技园\n
+              4.做项目\n
+        We Need: \n
+        students majoring in computer.\n
+        having interesting in Artificial Intelligence.\n
+            \n
+        Welcome to my team.
+    </string>
+    <string name="home">首页</string>
+    <string name="notice">设置提醒</string>
+    <string name="configuration">确认</string>
+    <string name="contact">联系人</string>
+    <string name="group">群组</string>
+    <string name="help_name">题目</string>
+    <string name="team_description">描述说明</string>
+    <string name="create_help">发布</string>
+    <string name="team_name">队名</string>
+    <string name="create_team">创建</string>
+    <string name="publish">创建</string>
+    <string name="publish_team">创建队伍</string>
+    <string name="publish_help">发起求助</string>
+    <string name="add_image">添加图片</string>
+    <string name="help_description">描述</string>
+    <string name="campus">全校联系人</string>
+    <string name="schedule">日程</string>
+    <string name="publish_activity">发布活动</string>
+    <string name="publish_deal">物品交易</string>
+    <string name="notebook">记事本</string>
+    <string name="hour">时</string>
+    <string name="minute">分</string>
+    <string name="day">日</string>
+    <string name="note">备注</string>
+
+    <array name="hours">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+    </array>
+    <array name="minutes">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+    </array>
+    <array name="days">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </array>
 </resources>

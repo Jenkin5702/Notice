@@ -3,6 +3,20 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowTitleSize">18sp</item>
+        <item name="android:labelTextSize">18sp</item>
+        <item name="android:fitsSystemWindows">false</item>
     </style>
 
+
+    <style name="menu_labels_style">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Custom.Widget.EditView" parent="Widget.AppCompat.EditText" >
+        <item name="colorAccent">@color/chocolate</item>
+        <item name="colorControlNormal">@color/chocolate</item>
+        <!-- AppCompatEditText选择的底线颜色 -->
+        <item name="colorControlActivated">@color/chocolate</item>
+    </style>
 </resources>

@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primary">#9E9E9E</color>
+    <color name="colorPrimary">#9E9E9E</color>
     <color name="primary_dark">#424242</color>
+    <color name="colorPrimaryDark">#424242</color>
     <color name="accent">#E0E0E0</color>
+    <color name="colorAccent">#E0E0E0</color>
     <color name="translucent_gray">#AAFFFFFF</color>
+    <color name="translucent_white">#CCFFFFFF</color>
     <color name="black_87">#DE000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="chocolate">#595249</color>
+    <color name="pickWheelBarrow_purple">#826C88</color>
+    <color name="pickWheelBarrow_dark">#5A524F</color>
+    <color name="pickWheelBarrow_light">#EAEEF3</color>
+    <color name="pickWheelBarrow_blue">#A2B7C0</color>
+    <color name="pickWheelBarrow_pink">#F0A9DD</color>
+
+    <color name="coffee">#B18F6A</color>
+    <color name="coffee_light">#DAB484</color>
+    <color name="coffee_milk">#DECCB6</color>
+    <color name="pickWheelBarrow_purple_translucent">#FF826C88</color>
+    <color name="pickWheelBarrow_dark_translucent">#FF5A524F</color>
+    <color name="pickWheelBarrow_light_translucent">#FFEAEEF3</color>
+    <color name="pickWheelBarrow_blue_translucent">#FFA2B7C0</color>
+    <color name="pickWheelBarrow_pink_translucent">#FFF0A9DD</color>
+
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#808080</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
 </resources>
